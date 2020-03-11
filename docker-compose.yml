@@ -10,8 +10,8 @@ services:
      && python manage.py collectstatic --noinput
      && python manage.py runserver 0.0.0.0:8000"
     #  && gunicorn %projectName%.wsgi -b 0.0.0.0:8000"
-    # environment:
-    #   - DJANGO_SETTINGS_MODULE=%projectName%.settings
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.local_settings
     env_file: .env
     volumes:
       - .:/code

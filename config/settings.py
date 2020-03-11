@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '93*se==h7b4cnvq_gzdq&n4r*(n8c90rh56=k%35rq5(!^dv6@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -173,14 +173,10 @@ ACCOUNT_LOGOUT_ON_GET = True
 
 # Herokuへのデプロイのために追記
 DATABASES['default'] = dj_database_url.config()
-
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
 ALLOWED_HOSTS = ['*']
-
 # STATIC_ROOT = 'staticfiles'
-
-# DEBUG = False
+DEBUG = False
 
 try:
     from .local_settings import *
