@@ -1,5 +1,6 @@
 {% extends 'gourmet/base.html' %}
 {% load static %}
+
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
 {% endblock css %}
@@ -14,6 +15,5 @@
         <br><br><br>
         <a href="{% url 'accounts:login' %}">ログインページへ</a>
     </div>
-    
 </div>
 {% endblock %}

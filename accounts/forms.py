@@ -1,12 +1,14 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from .models import CustomUser
+from django.contrib.auth import get_user_model
 from gourmet.models import Category, Pref
+
+CustomUser = get_user_model()
 
 class SignUpForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ['email', 'password1', 'password2', 'date_of_birth']
+        fields = ['email', 'password1', 'password2']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

@@ -1,5 +1,7 @@
 {% extends 'gourmet/base.html' %}
 {% load static %}
+{% load bootstrap4 %}
+
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
 {% endblock css %}
@@ -13,13 +15,7 @@
             <div class="col-md-6 offset-md-3">
                 <div class="card">
                     <div class="card-body">
-                        {{ form.non_field_errors }}
-                        {% for field in form %}
-                            <p>{{ field.label}}</p>
-                            {{ field }}
-                            {{ field.errors }}
-                            <hr>
-                        {% endfor %}
+                            {% bootstrap_form form  %}
                         <button type="submit" class="btn common-btn" >ログイン</button>
                         <input type="hidden" name="next" value="{{ next }}" />
                         {% csrf_token %}
